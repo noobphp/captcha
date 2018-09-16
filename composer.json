@@ -1,0 +1,18 @@
+{
+    "name": "noob/captcha",
+    "description": "simple captcha",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pxb",
+            "email": "768984347@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Noob\\Captcha\\": "src/"
+        }
+    }
+}
