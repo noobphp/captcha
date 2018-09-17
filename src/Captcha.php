@@ -26,8 +26,12 @@ class Captcha
 
     public function display()
     {
+        $paint = $this->getPaint();
+        if (! $paint->hasBgColor()) {
+            $paint->setRandBgColor();
+        }
         header('Content-type: image/png');
-        echo $this->getPaint()->setRandBgColor()->write($this->getCodeGenerate())->getResource()->destroyImage();
+        echo $paint->write($this->getCodeGenerate())->getResource()->destroyImage();
     }
 
     protected function getPaint()

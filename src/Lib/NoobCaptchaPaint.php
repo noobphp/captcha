@@ -13,6 +13,7 @@ class NoobCaptchaPaint implements CaptchaPaint
     protected $width;
     protected $height;
     protected $font_file;
+    protected $bg_status = false;
 
     public function __construct($width = 160, $height = 60)
     {
@@ -45,6 +46,7 @@ class NoobCaptchaPaint implements CaptchaPaint
     {
         // TODO: Implement setBgColor() method.
         imagefill($this->getImage(), 0, 0, $this->getColor($r, $g, $b));
+        $this->bg_status = true;
         return $this;
     }
 
@@ -94,6 +96,11 @@ class NoobCaptchaPaint implements CaptchaPaint
     {
         $this->font_file = $font_file;
         return $this;
+    }
+
+    public function hasBgColor()
+    {
+        return $this->bg_status;
     }
 
     /**
